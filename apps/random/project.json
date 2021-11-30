@@ -1,0 +1,99 @@
+{
+  "projectType": "application",
+  "root": "apps/random",
+  "sourceRoot": "apps/random/src",
+  "prefix": "taco",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/random",
+        "index": "apps/random/src/index.html",
+        "main": "apps/random/src/main.ts",
+        "polyfills": "apps/random/src/polyfills.ts",
+        "tsConfig": "apps/random/tsconfig.app.json",
+        "assets": ["apps/random/src/favicon.ico", "apps/random/src/assets"],
+        "styles": ["apps/random/src/styles.css"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/random/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/random/src/environments/environment.ts",
+              "with": "apps/random/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/random/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "random:build:production"
+        },
+        "development": {
+          "browserTarget": "random:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4201
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "random:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/random/src/**/*.ts",
+          "apps/random/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/random"],
+      "options": {
+        "jestConfig": "apps/random/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
