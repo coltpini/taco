@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@taco/elements": ["libs/elements/src/index.ts"],
+      "@taco/regex": ["libs/regex/src/index.ts"],
       "@taco/utils": ["libs/utils/src/index.ts"]
     }
   },
