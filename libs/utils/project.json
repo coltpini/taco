@@ -1,24 +1,21 @@
 {
-  "projectType": "library",
   "root": "libs/utils",
   "sourceRoot": "libs/utils/src",
-  "prefix": "taco",
+  "projectType": "library",
   "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/utils/**/*.ts"]
+      }
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/utils"],
       "options": {
         "jestConfig": "libs/utils/jest.config.js",
         "passWithNoTests": true
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "libs/utils/src/**/*.ts",
-          "libs/utils/src/**/*.html"
-        ]
       }
     }
   },
