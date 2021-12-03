@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@taco/components": ["libs/components/src/index.ts"],
+      "@taco/elements": ["libs/elements/src/index.ts"],
       "@taco/utils": ["libs/utils/src/index.ts"]
     }
   },
