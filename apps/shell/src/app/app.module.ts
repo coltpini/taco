@@ -16,11 +16,6 @@ import { RouterModule } from '@angular/router';
           loadChildren: () =>
             import('builder/Module').then((m) => m.RemoteEntryModule),
         },
-        {
-          path: 'random',
-          loadChildren: () =>
-            import('random/Module').then((m) => m.RemoteEntryModule),
-        },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

@@ -29,7 +29,7 @@ module.exports = {
   output: {
     uniqueName: 'shell',
     publicPath: 'auto',
-    scriptType: 'text/javascript',
+    scriptType: 'text/javascript'
   },
   optimization: {
     runtimeChunk: false,
@@ -47,7 +47,6 @@ module.exports = {
     new ModuleFederationPlugin({
       remotes: {
         builder: 'http://localhost:4201/remoteEntry.js',
-        random: 'http://localhost:4202/remoteEntry.js',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
