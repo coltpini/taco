@@ -29,6 +29,9 @@ module.exports = {
   output: {
     uniqueName: 'random',
     publicPath: 'auto',
+    // temporary work around because of webpack/angular 13 bug.
+    // publicPath: "http://localhost:4202/",
+    scriptType: 'text/javascript',
   },
   optimization: {
     runtimeChunk: false,

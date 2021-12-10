@@ -29,6 +29,9 @@ module.exports = {
   output: {
     uniqueName: 'shell',
     publicPath: 'auto',
+    // temporary work around because of webpack/angular 13 bug.
+    // publicPath: "http://localhost:4200/",
+    scriptType: 'text/javascript',
   },
   optimization: {
     runtimeChunk: false,
