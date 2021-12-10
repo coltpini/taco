@@ -27,7 +27,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: 'builder',
+    uniqueName: 'random',
     publicPath: 'auto',
   },
   optimization: {
@@ -44,10 +44,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'builder',
+      name: 'random',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': 'apps/builder/src/app/remote-entry/entry.module.ts',
+        './Module': 'apps/random/src/app/remote-entry/entry.module.ts',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
