@@ -29,7 +29,6 @@ module.exports = {
   output: {
     uniqueName: 'builder',
     publicPath: 'auto',
-    scriptType: 'text/javascript'
   },
   optimization: {
     runtimeChunk: false,
