@@ -5,6 +5,7 @@
     "builder-e2e": "apps/builder-e2e",
     "random": "apps/random",
     "random-e2e": "apps/random-e2e",
+    "services": "libs/services",
     "shell": "apps/shell",
     "shell-e2e": "apps/shell-e2e"
   }

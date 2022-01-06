@@ -1,0 +1,30 @@
+type Layer {
+  type: LayerType!
+  recipie: String!
+  name: String!
+  id: ID!
+  image: String
+}
+
+enum LayerType {
+  shell
+  topping
+  base
+  filling
+}
+
+type Taco {
+  layers: {
+    shell: Layer!
+    topping: [Layer]!
+    base: Layer!
+    filling: Layer!
+  }
+  name: String!
+  image: String
+};
+
+type Query {
+  allOfLayer(layer: string): [Layer]
+  taco(shell: ID, topping: [ID], base: ID, filling: ID): Taco
+}
